@@ -36,29 +36,31 @@ const ReferNow = () => {
     }
   };
 
-  if(!referralCode){
-    return(
-<Link
-            href={"/SignIn"}
-            className="bg-[#1A73E8] text-white text-xl px-8 py-2 rounded-lg w-fit"
-          >
-            Refer Now
-          </Link>
-    )
+  if (!referralCode) {
+    return (
+      <Link
+        href={"/SignIn"}
+        className="bg-[#1A73E8] text-white text-xl px-8 py-2 rounded-lg w-fit"
+      >
+        Refer Now
+      </Link>
+    );
   }
 
   return (
     <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
       <DialogTrigger asChild>
-      <button
-            name="refer now button"
-            className="bg-[#1A73E8] text-white text-xl px-8 py-2 rounded-lg w-fit"
-            onClick={() => {
-              setDialogOpen(true);
-            }}
-          >
-            Refer Now
-          </button>
+
+        <button
+          name="refer now button"
+          className="bg-[#1A73E8] text-white text-xl px-8 py-2 rounded-lg w-fit"
+          onClick={() => {
+            setDialogOpen(true);
+          }}
+        >
+          Refer Now
+        </button>
+        
       </DialogTrigger>
 
       <DialogContent
