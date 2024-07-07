@@ -3,6 +3,8 @@ import prismadb from "@/middleware/prismadb";
 import axios from "axios";
 import { NextResponse } from "next/server";
 
+
+
 function generateReferralCode(): string {
     return Math.random().toString(36).substring(2, 15);
 }
@@ -71,7 +73,7 @@ export async function POST(req: Request) {
 
         if (newUser) {
             // Send welcome email to new user with referral link
-            const referralLink = `https://yourdomain.com/SignUp?ref=${newReferralCode}`;
+            const referralLink = `https://accredian-frontend-task-ashen.vercel.app/SignUp?ref=${newReferralCode}`;
 
             await transporter.sendMail({
                 from: process.env.GMAIL_USER,

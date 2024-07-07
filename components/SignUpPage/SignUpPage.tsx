@@ -29,11 +29,36 @@ const SignIn = () => {
 
   const handleSignIn = async (e: any) => {
     e.preventDefault();
+
+    if(referralCode){
+      const validReferralCode = await axios.post('/api/Referral',{referredById:referralCode})
+      console.log(validReferralCode.data)
+      if(!validReferralCode.data.referralCode){
+        errorMessage("Referral code is not valid")
+        return
+      }
+    }
+
+    if(!email){
+        errorMessage("Please give your email")
+        return
+    }
+    if(!password){
+        errorMessage("Please give your password")
+        return
+    }
+
     setLoading(true);
 
     const user = await axios.post('/api/SignIn', { email, password })
-    if(user){
+    if(user.data.user){
         errorMessage("User already exists");
+        setLoading(false)
+        return
+    }
+
+    if(!fullName){
+        errorMessage("What is your name?")
         setLoading(false)
         return
     }

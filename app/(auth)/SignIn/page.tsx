@@ -18,6 +18,16 @@ const SignIn = () => {
 
   const handleSignIn = async (e:any) => {
     e.preventDefault();
+
+    if(!email){
+      errorMessage("Please give your email")
+      return
+  }
+  if(!password){
+      errorMessage("Please give your password")
+      return
+  }
+  
     setLoading(true);
 
     try {
