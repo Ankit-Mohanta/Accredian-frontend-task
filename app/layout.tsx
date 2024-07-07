@@ -4,6 +4,8 @@ import "./globals.css";
 import PromotionalBanner from "@/components/PromotionalBanner/page";
 import Navbar from "@/components/Navbar/page";
 import Footer from "@/components/Footer/page";
+import { ToastContainer } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +25,7 @@ export default function RootLayout({
         <PromotionalBanner />
         <Navbar />
         {children}
+        <ToastContainer />
         <Footer />
         </body>
     </html>

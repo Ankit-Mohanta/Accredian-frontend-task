@@ -4,6 +4,7 @@ import { ArrowForwardIos } from "@mui/icons-material";
 import React, { useState } from "react";
 import Icon from "@/assets/Group.png"
 import Image from "next/image";
+import ReferNow from "../ReferNow/page";
 
 const ReferralBenefit = () => {
   const [activeProgram, setActiveProgram] = useState(0);
@@ -129,12 +130,7 @@ const ReferralBenefit = () => {
         </div>
       </div>
 
-      <button
-        name="refer now button"
-        className="px-10 py-2 rounded-md bg-[#1A73E8] text-white mx-auto"
-      >
-        Refer Now
-      </button>
+      <ReferNow />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import ClipBoard from "@/assets/ClipBoard.png"
 import Wallet from "@/assets/Wallet.png"
 import Image from "next/image";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import ReferNow from "../ReferNow/page";
 
 const SecondComponent = () => {
   return (
@@ -130,12 +131,7 @@ const SecondComponent = () => {
         
       </div>
 
-      <button
-        name="refer now button"
-        className="px-10 py-2 rounded-md bg-[#1A73E8] text-white mx-auto"
-      >
-        Refer Now
-      </button>
+      <ReferNow />
     </div>
   );
 };
